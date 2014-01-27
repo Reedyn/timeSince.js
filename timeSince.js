@@ -58,8 +58,3 @@ var timesince = function timeSince(selector) {
     // update time every minute
     setTimeout(timesince, 60000);
 };
-
-
-
-
-    
