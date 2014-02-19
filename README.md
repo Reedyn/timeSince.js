@@ -31,7 +31,7 @@ To change the language of the plugin, replace the array `templates` at the begin
 ```javascript
 var templates = {
         prefix: "",
-        future: "",
+        future: "", // For dates set in future, just for fun :)
         suffix: " ago.",
         seconds: "Less than a minute",
         minute: "About a minute",
