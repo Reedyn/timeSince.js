@@ -1,4 +1,4 @@
-timeAgo.js
+timeSince.js
 ==========
 
 A simple javascript plugin for showing time since {{insert date}}
