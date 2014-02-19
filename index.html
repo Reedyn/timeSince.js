@@ -1,63 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>timeSince.js by reedyn</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="timeSince.js : A simple javascript plugin for showing time since a certain date." />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>timeSince.js</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>timeSince.js</h1>
-        <p>A simple javascript plugin for showing time since a certain date.</p>
 
-        <p class="view"><a href="https://github.com/reedyn/timeSince.js">View the Project on GitHub <small>reedyn/timeSince.js</small></a></p>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/reedyn/timeSince.js">View on GitHub</a>
 
+          <h1 id="project_title">timeSince.js</h1>
+          <h2 id="project_tagline">A simple javascript plugin for showing time since a certain date.</h2>
 
-        <ul>
-          <li><a href="https://github.com/reedyn/timeSince.js/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/reedyn/timeSince.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/reedyn/timeSince.js">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/reedyn/timeSince.js/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/reedyn/timeSince.js/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<h3>
-<a name="input" class="anchor" href="#input"><span class="octicon octicon-link"></span></a>Input</h3>
+<p><em>timeSince.js</em> uses the class <code>timesince</code> to find the element and the data-set attribute timesince (<code>data-timesince</code>) containing the date in UNIX Time to get the actual time, it will then replace the innerHTML value of the element with a the time since the specified date in <code>data-timesince</code>.</p>
 
 <h4>
 <a name="wordpress-input" class="anchor" href="#wordpress-input"><span class="octicon octicon-link"></span></a>WordPress input</h4>
 
-<div class="highlight highlight-php"><pre><span class="o">&lt;</span><span class="nb">time</span> <span class="nx">class</span><span class="o">=</span><span class="s2">"timeago"</span> <span class="nx">datetime</span><span class="o">=</span><span class="s2">"&lt;?php the_time('c'); ?&gt;"</span> <span class="nx">data</span><span class="o">-</span><span class="nx">timeago</span><span class="o">=</span><span class="s2">"&lt;?php the_time('U'); ?&gt;"</span> <span class="nx">title</span><span class="o">=</span><span class="s2">"&lt;?php the_time('F j, Y'); ?&gt;"</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="nx">the_time</span><span class="p">(</span><span class="s1">'F j, Y'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/time&gt;</span>
+<div class="highlight highlight-php"><pre><span class="o">&lt;</span><span class="nb">time</span> <span class="nx">class</span><span class="o">=</span><span class="s2">"timesince"</span> <span class="nx">data</span><span class="o">-</span><span class="nx">timesince</span><span class="o">=</span><span class="s2">"&lt;?php the_time('U'); ?&gt;"</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="nx">the_time</span><span class="p">(</span><span class="s1">'F j, Y'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/time&gt;</span>
+</pre></div>
+
+<h4>
+<a name="ghost-input" class="anchor" href="#ghost-input"><span class="octicon octicon-link"></span></a>Ghost input</h4>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">"timesince"</span> <span class="na">data-timesince=</span><span class="s">"{{date format='X'}}"</span><span class="nt">&gt;</span>{{date format='D MMM YYYY'}}<span class="nt">&lt;/time&gt;</span>
 </pre></div>
 
 <h4>
 <a name="html" class="anchor" href="#html"><span class="octicon octicon-link"></span></a>HTML</h4>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">"timeago"</span> <span class="na">datetime=</span><span class="s">"2014-01-27T12:42:49+01:00"</span> <span class="na">data-timeago=</span><span class="s">"1390822969"</span> <span class="na">title=</span><span class="s">"27 Januari, 2014"</span><span class="nt">&gt;</span>27 Januari, 2014<span class="nt">&lt;/time&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">"timesince"</span> <span class="na">data-timesince=</span><span class="s">"1390822969"</span><span class="nt">&gt;</span>27 Januari, 2014<span class="nt">&lt;/time&gt;</span>
 </pre></div>
 
 <h3>
-<a name="output" class="anchor" href="#output"><span class="octicon octicon-link"></span></a>Output</h3>
+<a name="advanced-usage" class="anchor" href="#advanced-usage"><span class="octicon octicon-link"></span></a>Advanced usage</h3>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">"timeago"</span> <span class="na">datetime=</span><span class="s">"2014-01-27T12:42:49+01:00"</span> <span class="na">data-timeago=</span><span class="s">"1390822969"</span><span class="nt">&gt;</span>Mindre än en minut sedan.<span class="nt">&lt;/time&gt;</span>
+<h4>
+<a name="language" class="anchor" href="#language"><span class="octicon octicon-link"></span></a>Language</h4>
+
+<p>To change the language of the plugin, replace the array <code>templates</code> at the beginning of the script with value from your country.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">templates</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">prefix</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+        <span class="nx">future</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span> <span class="c1">// For dates set in future, just for fun :)</span>
+        <span class="nx">suffix</span><span class="o">:</span> <span class="s2">" ago."</span><span class="p">,</span>
+        <span class="nx">seconds</span><span class="o">:</span> <span class="s2">"Less than a minute"</span><span class="p">,</span>
+        <span class="nx">minute</span><span class="o">:</span> <span class="s2">"About a minute"</span><span class="p">,</span>
+        <span class="nx">minutes</span><span class="o">:</span> <span class="s2">"%d minutes"</span><span class="p">,</span>
+        <span class="nx">hour</span><span class="o">:</span> <span class="s2">"About an hour"</span><span class="p">,</span>
+        <span class="nx">hours</span><span class="o">:</span> <span class="s2">"About %d hours"</span><span class="p">,</span>
+        <span class="nx">day</span><span class="o">:</span> <span class="s2">"One day"</span><span class="p">,</span>
+        <span class="nx">days</span><span class="o">:</span> <span class="s2">"%d days"</span><span class="p">,</span>
+        <span class="nx">month</span><span class="o">:</span> <span class="s2">"About a month"</span><span class="p">,</span>
+        <span class="nx">months</span><span class="o">:</span> <span class="s2">"%d months"</span><span class="p">,</span>
+        <span class="nx">year</span><span class="o">:</span> <span class="s2">"About a year"</span><span class="p">,</span>
+        <span class="nx">years</span><span class="o">:</span> <span class="s2">"%d years"</span>
+    <span class="p">};</span>
 </pre></div>
       </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/reedyn">reedyn</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">timeSince.js maintained by <a href="https://github.com/reedyn">reedyn</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-28736903-4");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
   </body>
 </html>
