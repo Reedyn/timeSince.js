@@ -13,8 +13,8 @@ A simple javascript plugin for showing time since {{insert date}}
 ```
 
 #### Ghost input
-```php
-<time class="timesince" datetime="<?php the_time('c'); ?>" data-timesince="<?php the_time('U'); ?>" title="<?php the_time('F j, Y'); ?>"><?php the_time('F j, Y'); ?></time>
+```html
+<time class="timesince" datetime="{{date format='YYYY-MM-DDTHH:mm:ssZ'}}" title="{{date format='D MMM YYYY'}}" data-timesince="{{date format='X'}}">{{date format='D MMM YYYY'}}</time>
 ```
 
 #### HTML
