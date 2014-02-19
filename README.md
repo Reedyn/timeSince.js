@@ -1,7 +1,7 @@
 timeSince.js
 ==========
 
-A simple javascript plugin for showing time since {{insert date}}
+A simple JavaScript plugin for showing time passed since a certain date.
 
 ## Usage
 
