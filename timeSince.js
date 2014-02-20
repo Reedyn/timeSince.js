@@ -3,18 +3,18 @@ var timesince = function timeSince(selector) {
     var templates = {
         prefix: "",
         future: "",
-        suffix: " sedan.",
-        seconds: "Mindre än en minut",
-        minute: "Ungefär en minut",
-        minutes: "%d minuter",
-        hour: "Ungefär en timme",
-        hours: "Ungefär %d timmar",
-        day: "En dag",
-        days: "%d dagar",
-        month: "Ungefär en månad",
-        months: "%d månader",
-        year: "Ungefär ett år",
-        years: "%d år"
+        suffix: " ago.",
+        seconds: "Less than a minute",
+        minute: "About a minute",
+        minutes: "%d minutes",
+        hour: "About an hour",
+        hours: "About %d hours",
+        day: "One day",
+        days: "%d days",
+        month: "About a month",
+        months: "%d months",
+        year: "About a year",
+        years: "%d years"
     };
     var template = function(t, n) {
         return templates[t] && templates[t].replace(/%d/i, Math.abs(Math.round(n)));
