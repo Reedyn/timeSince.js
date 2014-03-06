@@ -1,4 +1,4 @@
-timeSince.js
+timeSince.js [![Gittip](http://img.shields.io/gittip/reedyn.svg)](https://www.gittip.com/Shields/) [![Project Status](http://stillmaintained.com/reedyn/Draugur.png)](http://stillmaintained.com/reedyn/timeSince.js)
 ==========
 
 A simple JavaScript plugin for showing time passed since a certain date.
